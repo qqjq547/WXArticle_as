@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/head" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/activity_bg"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/item_bg"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/rl_loading_img"
+                    style="@style/option_item_rl" >
+
+                    <TextView
+                        style="@style/option_item_text_parent"
+                        android:text="@string/loading_img"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <ToggleButton
+                        android:id="@+id/tb_loading_img"
+                        android:layout_width="40dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/toggle_selector"
+                        android:textOff=""
+                        android:textOn="" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@color/gray" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_double_click_exit"
+                    style="@style/option_item_rl" >
+
+                    <TextView
+                        style="@style/option_item_text_parent"
+                        android:text="@string/double_click_exit"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textfont16" />
+
+                    <ToggleButton
+                        android:id="@+id/tb_double_click_exit"
+                        android:layout_width="40dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/toggle_selector"
+                        android:textOff=""
+                        android:textOn="" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/item_bg"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/rl_update"
+                    style="@style/option_item_rl" >
+
+                    <TextView
+                        style="@style/option_item_text_parent"
+                        android:text="@string/update"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textfont16" />
+
+                    <TextView
+                        android:id="@+id/curversion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/textfont14" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@color/gray" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_advtise"
+                    style="@style/option_item_rl" >
+
+                    <TextView
+                        android:id="@+id/setting_advtise"
+                        style="@style/option_item_text_parent"
+                        android:text="@string/advtise"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textfont16" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/textfont14"
+                        android:text="@string/advtise_detail" />
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@color/gray" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_feedback"
+                    style="@style/option_item_rl" >
+
+                    <TextView
+                        android:id="@+id/setting_feedback"
+                        style="@style/option_item_text_parent"
+                        android:text="@string/feedback"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textfont16" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/textfont14"
+                        android:text="@string/feedback_detail" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@color/gray" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_grade"
+                    style="@style/option_item_rl" >
+
+                    <TextView
+                        android:id="@+id/setting_grade"
+                        style="@style/option_item_text_parent"
+                        android:text="@string/grade"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textfont16" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/textfont14"
+                        android:text="@string/grade_detail" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/item_bg"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/rl_exit"
+                    style="@style/option_item_rl" >
+
+                    <TextView
+                        android:id="@+id/setting_logout"
+                        style="@style/option_item_text_parent"
+                        android:text="@string/exit"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textfont16" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/textfont14" 
+                        android:text="@string/exit_detail"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

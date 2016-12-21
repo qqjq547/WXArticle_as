@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="main1">#F9826C</color><!-- -->
+    <color name="main2">#4d89bf</color><!-- -->
+    <color name="main3">#e1bd21</color><!-- -->
+    <color name="transparent">#00000000</color>
+    <color name="halftransparent">#60000000</color>
+    <color name="pull_refresh_textview">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="lightwhite">#37FFFFFF</color>
+    <color name="lightwhite_corn">#70FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="red">#FF0000</color>
+    <color name="gray">#8E8E8E</color>
+    <color name="msg_list_item_sel_color">#A3C2EF</color>
+    <color name="chat_detail_split_line_color">#D0D0CF</color>
+    <color name="jpush_blue">#3F80DC</color>
+    <color name="graylight">#999999</color>
+    <color name="darkgray">#ff444444</color>
+    <color name="list_item_background_pressed">#efefef</color>
+    <color name="list_item_background_normal">@color/white</color>
+    <color name="list_background_normal">#FCFCFC</color>
+     <!-- 文字颜色值 -->
+     
+    <color name="text_white">#fdf1f1</color>
+    <color name="text_black">#666666</color>
+    <color name="text_gray">#909090</color>
+    <color name="text_green">#31bd80</color>
+    <color name="text_blue">#00c8e1</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <!-- 下拉刷新时，颜色值 -->
+    <color name="swiperefresh_color1">#ff00ddff</color>
+    <color name="swiperefresh_color2">#ffffbb33</color>
+    <color name="swiperefresh_color3">#ffff4444</color>
+    <color name="swiperefresh_color4">#ffaa66cc</color>
+    <color name="style_color_primary">#2196F3</color>
+    <color name="style_color_primary_dark">#1976D2</color>
+    <color name="style_color_primary_light">#BBDEFB</color>
+    <color name="style_color_accent">#FF4081</color>
+    <color name="style_text_color_primary">#ffffffff</color>
+    <color name="style_text_color_secondary">#ffffffff</color>
+    <color name="style_divider">#B6B6B6</color>
+    <color name="style_window_background">#ffffffff</color>
+    <color name="style_navigation_bar_color">#000000</color>
+    <!--custom color-->
+    <color name="navigation_item_selected">#12000000</color>
+    <color name="navdrawer_background">#ffffffff</color>
+    <color name="navdrawer_text_color">@color/black</color>
+    <color name="navdrawer_text_color_selected">@color/style_color_primary</color>
+    <color name="navdrawer_icon_tint">#888</color>
+    <color name="navdrawer_icon_tint_selected">@color/style_color_primary</color>
+    <color name="activity_bg">#eeeeee</color>
+    
+    
+</resources>

@@ -1,0 +1,121 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/style_color_primary">
+<include 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    layout="@layout/head"/>
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:layout_marginTop="80dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp">
+   <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/lightwhite">
+
+    <EditText android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@null"
+        android:inputType="number"
+        android:textSize="@dimen/textfont13"
+        android:hint="@string/register_phone_hint"/>
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lightwhite_corn"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/inputcode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="@string/register_verify_hint"
+            android:inputType="number"
+            android:padding="10dp"
+            android:textSize="@dimen/textfont13" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/verify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/btn_transparent_bg"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:textSize="@dimen/textfont13"
+            android:text="@string/register_getverify_code" />
+    </LinearLayout>
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lightwhite_corn"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/register_password_hint"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textSize="@dimen/textfont13" />
+     <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lightwhite_corn"/>
+    <EditText
+        android:id="@+id/repassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/forgetpwd_enterpwd_again"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textSize="@dimen/textfont13" />
+  
+    </LinearLayout>
+
+    <TextView 
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/btn_lightwhite_bg"
+        android:text="@string/submit"/>
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/login_line_horizental"/>
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/forgetpwd_notice"/>
+</LinearLayout>
+
+</LinearLayout>

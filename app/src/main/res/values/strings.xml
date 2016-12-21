@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">今日趣文</string>
+    <string name="action_settings">设置</string>
+    <string name="showdetail">查看详情</string>
+   <string name="loading">加载中…</string>
+    <string name="loading_no_more">已加载全部</string>
+    <string name="open">打开</string>
+    <string name="close">关闭</string>
+    <string name="login">登录</string>
+    <string name="login_phone_hint">请输入您的手机号</string>
+    <string name="login_password_hint">请输入密码</string>
+    <string name="login_forgetpassword">忘记密码？</string>
+    <string name="login_otherway">使用更多方式登录</string>
+    <string name="login_noaccount">随便看看</string>
+    <string name="register">注册</string>
+    <string name="register_phone_hint">请输入您的手机号</string>
+    <string name="register_password_hint">请输入6-20位字符密码</string>
+    <string name="register_verify_hint">请输入验证码</string>
+    <string name="register_getverify_code">请获取验证码</string>
+    <string name="forgetpwd">重置密码</string>
+    <string name="forgetpwd_enterpwd_again">请再次确认密码</string>
+    <string name="forgetpwd_notice">温馨提示：请输入手机号和短信验证码，并设置新的登录密码</string>
+    <string name="submit">提交</string>
+    <string name="sure">确定</string>
+    <string name="cancel">取消</string>
+    <string-array name="array_left_menu">
+      <item >精选文章</item>  
+      <item >热门文章</item>  
+      <item >文章分类</item>  
+      <item >我的收藏</item>  
+    </string-array>
+
+     <string name="share">分享</string>
+     <string name="collect">收藏</string>
+     <string name="commentlist_title">评论列表</string>
+     <string name="refresh">刷新</string>
+     <string name="text_size">文字大小</string>
+     <string name="text_smallest">超小号</string>
+     <string name="text_smaller">小号</string>
+     <string name="text_normal">正常</string>
+     <string name="text_largeer">大号</string>
+     <string name="text_largest">超大号</string>
+     
+    <string name="setting">设置</string>
+    <string name="loading_img">加载图片</string>
+	<string name="double_click_exit">双击退出</string>
+	<string name="update">检查新版本</string>
+	<string name="feedback">问题反馈</string>
+	<string name="feedback_detail">手机摇一摇</string>
+	<string name="advtise">提点建议</string>
+	<string name="advtise_detail">跟作者闲聊</string>
+	<string name="exit">退出</string>
+	<string name="exit_detail">客官慢走</string>
+	<string name="grade">去评分</string>
+	<string name="grade_detail">给个赞吧</string>
+	<string name="exit_app">退出软件</string>
+    <string name="exit_app_msg">退出后将不再接收新的消息提醒</string>
+    <string name="exit_logout">注销该账号</string>
+    <string name="exit_logout_msg">注销/切换其他账号登录</string>
+    
+	<string name="notice_accept">接收新通知</string>
+	<string name="notice_voice">声音</string>
+	<string name="notice_vibration">震动</string>
+	<string name="notice_app_exit">退出后不提醒</string>
+	<string name="share_title">好玩的文章，天天有！</string>
+	<string name="default_sharecontent">不用关注公众号也可以看到好玩的微信文章，我们为您精心挑选最有趣的微信文章</string>
+	
+	<string name="login_emptyphone">账号，密码不能为空</string>
+	<string name="login_inputrightphone">请输入正确的手机号</string>
+	<string name="login_success">登录成功</string>
+	<string name="login_failed">登录失败：请确认账号和密码无误后，再重试！</string>
+
+    <string name="regist_rightphone">请输入正确的电话号码</string>
+    <string name="regist_rightpwd">请输入6到20位的密码</string>
+    <string name="regist_rightcode">请输入6位数数字的验证码</string>
+    <string name="regist_success">注册成功</string>
+    <string name="sms_template">注册模板</string>
+    <string name="sms_afterget">秒后重新获取</string>
+    
+    <string name="main_exit_makesure">确定退出吗？</string>
+    <string name="main_exit_again">在按一次退出程序</string>
+    <string name="already_nodata">已经没有数据了</string>
+    <string name="fresh_done">刷新完成</string>
+    <string-array name="showapi_title_array">
+        <item>推荐</item>
+        <item>段子手</item>
+        <item>养生堂</item>
+        <item>私生活</item>
+        <item>八卦精</item>
+        <item>爱生活</item>
+        <item>财经迷</item>
+        <item>汽车迷</item>
+        <item>科技咖</item>
+        <item>潮人帮</item>
+        <item>辣妈帮</item>
+        <item>点赞党</item>
+        <item>旅行家</item>
+        <item>职场人</item>
+        <item>美食家</item>
+        <item>古今通</item>
+        <item>学霸族</item>
+        <item>星座控</item>
+        <item>体育迷</item>
+    </string-array>
+    <string name="mycollect_title">我的收藏</string>
+    <string-array name="collect_title_array">
+        <item>精选收藏</item>
+        <item>热门收藏</item>
+    </string-array>
+    <string name="please_login">请先登录</string>
+    <string name="comment_nofinddata">没有发现任何评论！</string>
+    <string name="comment_getdatafailed">没有发现任何评论！</string>
+    <string name="comment_edittext_hint">写点什么吧</string>
+    <string name="comment_success">评论成功</string>
+    <string name="comment_failded">评论失败，请重试</string>
+    <string name="comment_send_failded">发送失败</string>
+    
+    <string name="detail_getdata_failed">无法获取该数据，刷新重试</string>
+    <string name="detail_comment_empty">写点什么吧</string>
+    <string name="detail_nofindmsg">没有找到相关信息</string>
+    <string name="detail_nofindcollectmsg">没有找到收藏的信息</string>
+    <string name="detail_collectsuccess">收藏成功</string>
+    <string name="detail_quitcollectsuccess">取消收藏</string>
+    <string name="detail_operate_fail">操作失败</string>
+
+    <string name="detail_already_like">已经点过赞了</string>
+    <string name="detail_like_success">点赞成功</string>
+    <string name="detail_like_fail">点赞失败</string>
+    
+    <string name="forgetpwd_same">确保密码一致</string>
+    <string name="forgetpwd_success">密码重置成功</string>
+    
+    <string name="user_title">修改用户信息</string>
+    <string name="user_birth">出身年份：</string>
+    <string name="user_sex">性别：</string>
+    <string name="user_man">男</string>
+    <string name="user_feman">女</string>
+    <string name="user_email">邮箱：</string>
+    <string name="user_enter_email">请输入您的邮箱地址:</string>
+    <string name="user_enter_notice">完善您的信息，方便我们提供更精准的内容</string>
+    <string name="user_selectbirth">请选择出生年份</string>
+    <string name="user_selectheadimg">请选择您的头像图片</string>
+    <string name="user_selectsex">请选择您的性别</string>
+    <string name="user_inputemail">请输入正确的邮箱</string>
+    <string name="user_inputnick">请输入昵称</string>
+    <string name="user_update_success">更新成功</string>
+    <string name="user_update_fail">更新失败</string>
+    <string name="user_upload_headimg">开始上传头像:</string>
+    <string name="user_upload_fail">上传失败</string>
+    <string name="user_upload_doing">正在上传头像</string>
+    <string name="user_upload_success">上传成功</string>
+    <string name="user_cant_savetoalbum">无法输入到相册</string>
+    <string name="user_sdcardnoexist">SD卡不存在</string>
+    <string name="user_takepicture">拍照</string>
+    <string name="user_photoalbum">手机相册</string>
+    <string name="user_nickname">昵称:</string>
+    <string name="user_enter_nickname">请输入昵称</string>
+    <string name="thirdlogin_auth_success">授权成功</string>
+    <string name="thirdlogin_auth_fail">授权失败</string>
+    <string name="thirdlogin_auth_cancel">授权取消</string>
+    <string name="reason_success">请求成功</string>
+</resources>
