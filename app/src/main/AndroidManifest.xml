@@ -60,14 +60,14 @@
         android:icon="@drawable/app_icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.hereafter.wxarticle.LoginActivity" >
+        <activity android:name="com.hereafter.wxarticle.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.hereafter.wxarticle.MainActivity" >
+        <activity android:name="com.hereafter.wxarticle.LoginActivity" >
         </activity>
         <activity android:name="com.hereafter.wxarticle.RegisterActivity" />
         <activity android:name="com.hereafter.wxarticle.ForgetPwdActivity" />
