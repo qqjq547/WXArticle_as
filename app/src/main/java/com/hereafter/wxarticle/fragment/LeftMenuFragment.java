@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -89,6 +90,9 @@ public class LeftMenuFragment extends Fragment implements View.OnClickListener, 
 			} else {
 				username.setText(curUser.getNickname());
 			}
+		}else{
+			headimg.setImageResource(R.drawable.default_head);
+			username.setText("");
 		}
 	}
 

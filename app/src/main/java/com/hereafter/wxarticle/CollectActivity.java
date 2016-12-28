@@ -19,6 +19,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,6 +68,8 @@ public class CollectActivity extends BaseActivity{
 		// TODO Auto-generated method stub
 		collectView[0] = (PullLoadMoreRecyclerView) LayoutInflater.from(this).inflate(R.layout.listview, null);
 		collectView[1] = (PullLoadMoreRecyclerView) LayoutInflater.from(this).inflate(R.layout.listview, null);
+		collectView[0].setLinearLayout();
+		collectView[1].setLinearLayout();
 		mMainAdapter = new MainAdapter(this, juheArr);
 		mMainAdapter.setRecyItemClickListener(new RecyItemClickListener() {
 			@Override

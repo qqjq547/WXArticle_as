@@ -27,6 +27,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import cn.bmob.v3.BmobUser;
+
 public class SettingActivity extends BaseActivity {
 	@ViewInject(R.id.rl_loading_img)
 	private RelativeLayout rl_loading_img;
@@ -164,6 +166,7 @@ public class SettingActivity extends BaseActivity {
 				// TODO Auto-generated method stub
 				dialog.dismiss();
 				user.logOut(SettingActivity.this);
+				BmobUser.logOut(SettingActivity.this);
 			}
 		});
 		if (user == null) {

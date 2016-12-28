@@ -112,7 +112,7 @@ public class ContentFragment extends Fragment  {
 	private void requestData() {
 		Parameters params = new Parameters();
 		params.add("pno", curpage);
-		params.add("ps", 50);
+		params.add("ps", 20);
 		JuheData.executeWithAPI(activity, 147, "http://v.juhe.cn/weixin/query", JuheData.GET, params,
 				new DataCallBack() {
 
@@ -147,10 +147,14 @@ public class ContentFragment extends Fragment  {
 								mListView.setPullLoadMoreCompleted();
 								saveData(dataBmobs);
 								if (totalPage == curpage) {
-									Toast.makeText(activity, getString(R.string.already_nodata), Toast.LENGTH_LONG)
+									Toast.makeText(activity, getString(R.string.already_nodata), Toast.LENGTH_SHORT)
 											.show();
 								}
 
+							}else{
+								Toast.makeText(activity, json.getString("reason"), Toast.LENGTH_SHORT)
+										.show();
+								mListView.setPullLoadMoreCompleted();
 							}
 						} catch (JSONException e) {
 							// TODO Auto-generated catch block

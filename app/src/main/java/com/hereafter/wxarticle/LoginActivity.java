@@ -83,7 +83,6 @@ public class LoginActivity extends BaseActivity {
 						// TODO Auto-generated method stub
 						showLongToast(R.string.login_success);
 						finish();
-						startActivity(new Intent(LoginActivity.this, MainActivity.class));
 					}
 
 					@Override
