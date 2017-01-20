@@ -88,7 +88,11 @@ public class ShowTypeFragment extends Fragment implements OnItemClickListener {
 			map = mapdata;
 			fragmentList = new ShowFragment[map.size()];
 			for (int i = 0; i < fragmentList.length; i++) {
-				fragmentList[i] = new ShowFragment(i + 1);
+				fragmentList[i] = new ShowFragment();
+				Bundle bundle=new Bundle();
+				bundle.putInt("id",i + 1);
+				fragmentList[i].setArguments(bundle);
+
 			}
 		}
 

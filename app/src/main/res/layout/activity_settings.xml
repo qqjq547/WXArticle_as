@@ -108,31 +108,6 @@
                     android:background="@color/gray" />
 
                 <RelativeLayout
-                    android:id="@+id/rl_advtise"
-                    style="@style/option_item_rl" >
-
-                    <TextView
-                        android:id="@+id/setting_advtise"
-                        style="@style/option_item_text_parent"
-                        android:text="@string/advtise"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/textfont16" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:textColor="@color/text_gray"
-                        android:textSize="@dimen/textfont14"
-                        android:text="@string/advtise_detail" />
-                </RelativeLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1px"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:background="@color/gray" />
-
-                <RelativeLayout
                     android:id="@+id/rl_feedback"
                     style="@style/option_item_rl" >
 

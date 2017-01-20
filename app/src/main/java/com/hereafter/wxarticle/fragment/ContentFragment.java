@@ -11,15 +11,15 @@ import com.hereafter.wxarticle.R;
 import com.hereafter.wxarticle.adapter.MainAdapter;
 import com.hereafter.wxarticle.bmob.Juhe;
 import com.hereafter.wxarticle.dao.JuheDao;
+import com.hereafter.wxarticle.http.HttpUtil;
+import com.hereafter.wxarticle.http.ResponeCallback;
 import com.hereafter.wxarticle.interf.RecyItemClickListener;
 import com.hereafter.wxarticle.util.BmobUtil;
 import com.hereafter.wxarticle.util.LogUtil;
 import com.hereafter.wxarticle.util.RefreshLayout;
 import com.hereafter.wxarticle.util.RefreshLayout.OnLoadListener;
 import com.hereafter.wxarticle.widget.PullLoadMoreRecyclerView;
-import com.thinkland.sdk.android.DataCallBack;
-import com.thinkland.sdk.android.JuheData;
-import com.thinkland.sdk.android.Parameters;
+import com.lidroid.xutils.http.RequestParams;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -110,71 +110,61 @@ public class ContentFragment extends Fragment  {
 	}
 
 	private void requestData() {
-		Parameters params = new Parameters();
-		params.add("pno", curpage);
-		params.add("ps", 20);
-		JuheData.executeWithAPI(activity, 147, "http://v.juhe.cn/weixin/query", JuheData.GET, params,
-				new DataCallBack() {
-
-					@Override
-					public void onSuccess(int statusCode, String responseString) {
-						// TODO Auto-generated method stub
-						LogUtil.e(responseString);
-						try {
-							JSONObject json = new JSONObject(responseString);
-							if (json.getString("reason").equals(getResources().getString(R.string.reason_success))) {
-								json = json.getJSONObject("result");
-								totalPage = json.getInt("totalPage");
-								curpage = json.getInt("pno");
-								 ArrayList<Juhe> dataBmobs = new ArrayList<Juhe>();
-								JSONArray array = json.getJSONArray("list");
-								for (int i = 0; i < array.length(); i++) {
-									JSONObject object = array.getJSONObject(i);
-									String id = object.getString("id");
-									String title = object.getString("title");
-									String source = object.getString("source");
-									String firstImg = object.getString("firstImg");
-									String mark = object.getString("mark");
-									String url = object.getString("url");
-									Juhe juhe = new Juhe(id, title, source, firstImg, mark, url);
-									dataBmobs.add(juhe);
-								}
-								if (curpage==1){
-									mAdapter.clearData();
-								}
-								mAdapter.addData(dataBmobs);
-								mAdapter.notifyDataSetChanged();
-								mListView.setPullLoadMoreCompleted();
-								saveData(dataBmobs);
-								if (totalPage == curpage) {
-									Toast.makeText(activity, getString(R.string.already_nodata), Toast.LENGTH_SHORT)
-											.show();
-								}
-
-							}else{
-								Toast.makeText(activity, json.getString("reason"), Toast.LENGTH_SHORT)
-										.show();
-								mListView.setPullLoadMoreCompleted();
-							}
-						} catch (JSONException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
+		HttpUtil.getJuheData(curpage,20,new ResponeCallback(){
+			@Override
+			public void onSuccess(String result) {
+				super.onSuccess(result);
+				LogUtil.e(result);
+				try {
+					JSONObject json = new JSONObject(result);
+					if (json.getString("reason").equals(getResources().getString(R.string.reason_success))) {
+						json = json.getJSONObject("result");
+						totalPage = json.getInt("totalPage");
+						curpage = json.getInt("pno");
+						ArrayList<Juhe> dataBmobs = new ArrayList<Juhe>();
+						JSONArray array = json.getJSONArray("list");
+						for (int i = 0; i < array.length(); i++) {
+							JSONObject object = array.getJSONObject(i);
+							String id = object.getString("id");
+							String title = object.getString("title");
+							String source = object.getString("source");
+							String firstImg = object.getString("firstImg");
+							String mark = object.getString("mark");
+							String url = object.getString("url");
+							Juhe juhe = new Juhe(id, title, source, firstImg, mark, url);
+							dataBmobs.add(juhe);
+						}
+						if (curpage==1){
+							mAdapter.clearData();
+						}
+						mAdapter.addData(dataBmobs);
+						mAdapter.notifyDataSetChanged();
+						mListView.setPullLoadMoreCompleted();
+						saveData(dataBmobs);
+						if (totalPage == curpage) {
+							Toast.makeText(activity, getString(R.string.already_nodata), Toast.LENGTH_SHORT)
+									.show();
 						}
 
+					}else{
+						Toast.makeText(activity, json.getString("reason"), Toast.LENGTH_SHORT)
+								.show();
+						mListView.setPullLoadMoreCompleted();
 					}
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 
-					@Override
-					public void onFinish() {
-						// TODO Auto-generated method stub
+			@Override
+			public void onFailure(String errmsg) {
+				super.onFailure(errmsg);
+				LogUtil.e("errmsg=" + errmsg );
+			}
+		});
 
-					}
 
-					@Override
-					public void onFailure(int statusCode, String responseString, Throwable throwable) {
-						// TODO Auto-generated method stub
-						LogUtil.e("statusCode=" + statusCode + ",responseString=" + responseString);
-					}
-				});
 	}
 
 	public void saveData(final ArrayList<Juhe> dataBmobs) {

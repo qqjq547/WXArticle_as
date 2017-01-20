@@ -1,16 +1,19 @@
 package com.hereafter.wxarticle.http;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import com.hereafter.wxarticle.util.LogUtil;
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.RequestBody;
 
 public class HttpUtil {
-	public static final String muurl = "http://www.lezhuan.me/apk/lezhuan.apk";
 	public static final String URL_SHARE_BASE = "http://www.pgyer.com/kVyv";
+	public static final String URL_JUHE="http://v.juhe.cn/weixin/query";
+	public static final String Juhe_WX_KEY="adf7649c744d28d7eeb5e64049f54383";
 
 	private static final OkHttpClient mOkHttpClient = new OkHttpClient();
 
@@ -34,16 +37,9 @@ public class HttpUtil {
 		Request request = new Request.Builder().url(url).post(formBody).build();
 		mOkHttpClient.newCall(request).enqueue(callback);
 	}
-
-	public static String getUrlStr(String url, Map<String, String> params) {
-		url = url + "?";
-		for (Map.Entry<String, String> entry : params.entrySet()) {
-			String key = params.get(entry.getKey());
-			String value = params.get(entry.getValue());
-			url = url + key + "=" + value + "&";
-		}
-		url = url.substring(0, url.length() - 2);
-		return url;
+	public static void getJuheData(int pno,int ps,ResponeCallback callback){
+		String url=URL_JUHE+"?"+"pno="+pno+"&ps="+20+"&key="+Juhe_WX_KEY;
+		get(url,callback);
 	}
 
 }

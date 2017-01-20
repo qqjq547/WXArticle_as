@@ -8,11 +8,6 @@ import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.pgyersdk.activity.FeedbackActivity;
 import com.pgyersdk.feedback.PgyFeedback;
-import com.umeng.fb.FeedbackAgent;
-import com.umeng.update.UmengUpdateAgent;
-import com.umeng.update.UmengUpdateListener;
-import com.umeng.update.UpdateResponse;
-import com.umeng.update.UpdateStatus;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -28,6 +23,7 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.update.BmobUpdateAgent;
 
 public class SettingActivity extends BaseActivity {
 	@ViewInject(R.id.rl_loading_img)
@@ -38,8 +34,6 @@ public class SettingActivity extends BaseActivity {
 	private RelativeLayout rl_update;
 	@ViewInject(R.id.curversion)
 	private TextView curversion;
-	@ViewInject(R.id.rl_advtise)
-	private RelativeLayout rl_advtise;
 	@ViewInject(R.id.rl_feedback)
 	private RelativeLayout rl_feedback;
 	@ViewInject(R.id.rl_double_click_exit)
@@ -63,7 +57,6 @@ public class SettingActivity extends BaseActivity {
 		curversion.setText(Utils.getVersionName(this));
 		rl_loading_img.setOnClickListener(this);
 		rl_update.setOnClickListener(this);
-		rl_advtise.setOnClickListener(this);
 		rl_feedback.setOnClickListener(this);
 		rl_double_click_exit.setOnClickListener(this);
 		rl_grade.setOnClickListener(this);
@@ -98,32 +91,7 @@ public class SettingActivity extends BaseActivity {
 			}
 			break;
 		case R.id.rl_update:
-			UmengUpdateAgent.setUpdateOnlyWifi(false);
-			UmengUpdateAgent.setUpdateListener(new UmengUpdateListener() {
-
-				@Override
-				public void onUpdateReturned(int updateStatus, UpdateResponse updateInfo) {
-					// TODO Auto-generated method stub
-					switch (updateStatus) {
-					case UpdateStatus.Yes: // has update
-						UmengUpdateAgent.showUpdateDialog(SettingActivity.this, updateInfo);
-						break;
-					case UpdateStatus.No: // has no update
-						Toast.makeText(SettingActivity.this, "已经是最新的版本啦！", Toast.LENGTH_SHORT).show();
-						break;
-					case UpdateStatus.NoneWifi: // none wifi
-						Toast.makeText(SettingActivity.this, "没有wifi连接， 只在wifi下更新", Toast.LENGTH_SHORT).show();
-						break;
-					case UpdateStatus.Timeout: // time out
-						Toast.makeText(SettingActivity.this, "请求超时", Toast.LENGTH_SHORT).show();
-						break;
-					}
-				}
-			});
-			UmengUpdateAgent.update(this);
-			break;
-		case R.id.rl_advtise:
-			new FeedbackAgent(this).startFeedbackActivity();
+			BmobUpdateAgent.update(this);
 			break;
 		case R.id.rl_feedback:
 			 FeedbackActivity.setBarImmersive(true);

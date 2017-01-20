@@ -51,13 +51,11 @@ public class ShowFragment extends Fragment implements OnItemClickListener {
 	private int id = 0;
 	private ShowApiDao dao;
 
-	public ShowFragment(int id) {
-		super();
-		this.id = id;
-	}
+
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		this.id=getArguments().getInt("id");
 		this.activity = getActivity();
 		dao = ShowApiDao.getInstance(activity);
 	};
@@ -75,7 +73,6 @@ public class ShowFragment extends Fragment implements OnItemClickListener {
 	public void onActivityCreated(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
-		Log.e("hjq", "onActivityCreated");
 		listdata = dao.queryAll();
 		mAdapter = new ShowRecyAdapter(activity,listdata);
 		mAdapter.setRecyItemClickListener(new RecyItemClickListener() {

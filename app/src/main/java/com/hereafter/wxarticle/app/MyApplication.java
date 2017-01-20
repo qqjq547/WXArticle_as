@@ -5,7 +5,6 @@ import java.util.LinkedList;
 import com.hereafter.wxarticle.dao.ShowApiDao;
 import com.hereafter.wxarticle.util.ImageLoaderUtil;
 import com.pgyersdk.crash.PgyCrashManager;
-import com.thinkland.sdk.android.JuheSDKInitializer;
 import com.umeng.message.PushAgent;
 import com.umeng.message.UmengMessageHandler;
 import com.umeng.message.UmengNotificationClickHandler;
@@ -30,8 +29,6 @@ public class MyApplication extends Application {
 		instance = this;
 		super.onCreate();
 		activityList = new LinkedList<Activity>();
-		JuheSDKInitializer.initialize(getApplicationContext());
-		Bmob.initialize(getApplicationContext(), "13cfa5018daa7ed1799b869cbf35140b");
 		PlatformConfig.setWeixin("wxd61c4bdc2060e7cb", "a9381049647f55617ee0a626ac439cf6");
 		// 微信 appid appsecret
 		PlatformConfig.setSinaWeibo("4189290142", "bbb7bc245f03e6b4b9683a4cb0732cad");

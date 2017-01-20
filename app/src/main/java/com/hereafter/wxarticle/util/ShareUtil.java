@@ -71,7 +71,7 @@ public class ShareUtil {
 
 	public void show() {
 		new ShareAction(activity)
-				.setDisplayList(SHARE_MEDIA.WEIXIN, SHARE_MEDIA.WEIXIN_CIRCLE, SHARE_MEDIA.SINA, SHARE_MEDIA.QQ,
+				.setDisplayList(SHARE_MEDIA.SINA, SHARE_MEDIA.QQ,
 						SHARE_MEDIA.QZONE)
 				.withText(share_content).withTitle(share_title).withTargetUrl(share_url).withMedia(mUmImage)
 				.setListenerList(umShareListener, umShareListener).open();

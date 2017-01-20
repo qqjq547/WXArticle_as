@@ -15,10 +15,8 @@ import com.hereafter.wxarticle.util.ShareUtil;
 import com.hereafter.wxarticle.util.Utils;
 import com.pgyersdk.feedback.PgyFeedbackShakeManager;
 import com.umeng.analytics.MobclickAgent;
-import com.umeng.fb.FeedbackAgent;
 import com.umeng.message.IUmengRegisterCallback;
 import com.umeng.message.PushAgent;
-import com.umeng.update.UmengUpdateAgent;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -63,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
 		initToolBar();
 		initViews();
 		BmobUpdateAgent.initAppVersion(this);
-		UmengUpdateAgent.update(this);
 		share = new ShareUtil(this);
 		titleArr = getResources().getStringArray(R.array.array_left_menu);
 		fragments[0] = new ContentFragment();
@@ -97,9 +94,6 @@ public class MainActivity extends AppCompatActivity {
 				}
 			}
 		});
-		FeedbackAgent agent = new FeedbackAgent(this);
-		agent.sync();
-		agent.openAudioFeedback();
 		PushAgent mPushAgent = PushAgent.getInstance(this);
 		mPushAgent.enable();
 		mPushAgent.enable(new IUmengRegisterCallback() {

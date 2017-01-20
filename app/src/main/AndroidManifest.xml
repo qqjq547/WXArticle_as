@@ -89,7 +89,6 @@
             android:name="com.hereafter.wxarticle.ShowApiCommentActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name="com.hereafter.wxarticle.CommunityActivity" />
         <activity android:name="com.hereafter.wxarticle.SettingActivity" />
         <activity android:name="com.hereafter.wxarticle.CollectActivity" />
 
@@ -111,24 +110,9 @@
         </meta-data>
 
         <activity
-            android:name="com.umeng.fb.ConversationActivity"
-            android:label="@string/umeng_fb_title"
-            android:launchMode="singleTop"
-            android:theme="@android:style/Theme.Light" />
-        <activity
-            android:name="com.umeng.fb.HelpActivity"
-            android:label="@string/umeng_fb_title"
-            android:launchMode="singleTop" />
-        <activity
             android:name="com.umeng.socialize.editorpage.ShareActivity"
             android:excludeFromRecents="true"
             android:theme="@style/Theme.UMDefault" />
-        <activity
-            android:name="com.hereafter.wxarticle.wxapi.WXEntryActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name=".WBShareActivity"
             android:configChanges="keyboardHidden|orientation"
@@ -168,17 +152,11 @@
             android:name="com.tencent.connect.common.AssistActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <!-- 友盟更新 -->
-        <service
-            android:name="com.umeng.update.net.DownloadingService"
-            android:process=":DownloadingService" >
-        </service>
-
+        <!-- BMOB更新 -->
         <activity
-            android:name="com.umeng.update.UpdateDialogActivity"
+            android:name="cn.bmob.v3.update.UpdateDialogActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
         </activity>
-
         <!-- 蒲公英 -->
         <activity android:name="com.pgyersdk.activity.FeedbackActivity" />
 
