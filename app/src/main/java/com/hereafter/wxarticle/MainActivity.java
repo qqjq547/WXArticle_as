@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
 		initToolBar();
 		initViews();
 		BmobUpdateAgent.initAppVersion(this);
+		BmobUpdateAgent.silentUpdate(this);
 		share = new ShareUtil(this);
 		titleArr = getResources().getStringArray(R.array.array_left_menu);
 		fragments[0] = new ContentFragment();

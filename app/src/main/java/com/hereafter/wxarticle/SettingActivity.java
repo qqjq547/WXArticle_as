@@ -2,6 +2,7 @@ package com.hereafter.wxarticle;
 
 import com.hereafter.wxarticle.app.MyApplication;
 import com.hereafter.wxarticle.bmob.MyUser;
+import com.hereafter.wxarticle.util.LogUtil;
 import com.hereafter.wxarticle.util.PreferenceUtil;
 import com.hereafter.wxarticle.util.Utils;
 import com.lidroid.xutils.ViewUtils;
@@ -23,7 +24,10 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.listener.BmobUpdateListener;
 import cn.bmob.v3.update.BmobUpdateAgent;
+import cn.bmob.v3.update.UpdateResponse;
+import cn.bmob.v3.update.UpdateStatus;
 
 public class SettingActivity extends BaseActivity {
 	@ViewInject(R.id.rl_loading_img)
@@ -91,6 +95,23 @@ public class SettingActivity extends BaseActivity {
 			}
 			break;
 		case R.id.rl_update:
+			BmobUpdateAgent.setUpdateListener(new BmobUpdateListener() {
+				@Override
+				public void onUpdateReturned(int updateStatus, UpdateResponse updateResponse) {
+					if (updateStatus == UpdateStatus.Yes) {//版本有更新
+					}else if(updateStatus == UpdateStatus.No){
+						showShortToast("版本无更新");
+					}else if(updateStatus==UpdateStatus.EmptyField){//此提示只是提醒开发者关注那些必填项，测试成功后，无需对用户提示
+						showShortToast("请检查你AppVersion表的必填项，1、target_size（文件大小）是否填写；2、path或者android_url两者必填其中一项。");
+					}else if(updateStatus==UpdateStatus.IGNORED){
+						showShortToast("该版本已被忽略更新");
+					}else if(updateStatus==UpdateStatus.ErrorSizeFormat){
+						showShortToast("请检查target_size填写的格式，请使用file.length()方法获取apk大小。");
+					}else if(updateStatus==UpdateStatus.TimeOut){
+						showShortToast("查询出错或查询超时");
+					}
+				}
+			});
 			BmobUpdateAgent.update(this);
 			break;
 		case R.id.rl_feedback:
